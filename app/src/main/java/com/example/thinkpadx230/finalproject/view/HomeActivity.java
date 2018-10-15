@@ -1,10 +1,13 @@
 package com.example.thinkpadx230.finalproject.view;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.thinkpadx230.finalproject.R;
@@ -59,5 +62,27 @@ public class HomeActivity extends AppCompatActivity {
         adapter.addFragment(new UpComing(), getString(R.string.upcoming));
         adapter.addFragment(new UpComing(), getString(R.string.favorit));
         viewPager.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                startActivity(new Intent(HomeActivity.this, SettingActivity.class));
+                break;
+
+            case R.id.action_search:
+                startActivity(new Intent(HomeActivity.this, SearchActivity.class));
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

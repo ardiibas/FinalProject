@@ -102,4 +102,6 @@
     <string name="upcoming">Up Coming</string>
     <string name="favorit">Favorite</string>
     <string name="overview">Overview</string>
+    <string name="action_search">Search</string>
+    <string name="hint_search">Input title of film</string>
 </resources>
