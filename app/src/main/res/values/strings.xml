@@ -98,4 +98,7 @@
     </string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="upcoming">Up Coming</string>
+    <string name="favorit">Favorite</string>
 </resources>
