@@ -1,5 +1,6 @@
 package com.example.thinkpadx230.finalproject.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -16,6 +17,8 @@ import com.example.thinkpadx230.finalproject.model.list.ListMovie;
 import com.example.thinkpadx230.finalproject.model.upcoming.Upcoming;
 import com.example.thinkpadx230.finalproject.network.APIClient;
 import com.example.thinkpadx230.finalproject.network.ServiceGenerator;
+import com.example.thinkpadx230.finalproject.util.ItemClick;
+import com.example.thinkpadx230.finalproject.view.DetailActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +55,13 @@ public class NowPlaying extends Fragment {
         recyclerView.setAdapter(adapterMovie);
 
         getMovieNow();
+
+        recyclerView.addOnItemTouchListener(new ItemClick(getContext(), (view1, position) -> {
+            Intent intent = new Intent(getActivity(), DetailActivity.class);
+            intent.putExtra("id", listMovies.get(position).getId());
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }));
 
         return view;
     }

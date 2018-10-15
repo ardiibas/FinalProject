@@ -24,7 +24,7 @@
             android:label="@string/title_activity_detail"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <receiver android:name=".FinalAppWidget">
+        <receiver android:name=".widget.FinalAppWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>

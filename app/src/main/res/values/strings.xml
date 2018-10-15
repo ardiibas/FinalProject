@@ -101,4 +101,5 @@
     <string name="now_playing">Now Playing</string>
     <string name="upcoming">Up Coming</string>
     <string name="favorit">Favorite</string>
+    <string name="overview">Overview</string>
 </resources>
